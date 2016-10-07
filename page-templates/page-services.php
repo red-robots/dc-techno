@@ -25,6 +25,7 @@ $i = 0;
 	'paged' => $paged,
 ));
 	if ($wp_query->have_posts()) : ?>
+	<div class="service-questions">
     <?php while ($wp_query->have_posts()) : ?>
         
     <?php $wp_query->the_post(); 
@@ -45,6 +46,7 @@ $i = 0;
         
         
 	<?php endwhile; // end of the loop. ?>
+	</div>
     <?php endif; // end of the loop. ?>
 
 		</div><!-- #content -->

@@ -32,6 +32,10 @@ $i = 0;
 		?>
         
         <div class="post">
+        <?php if ( has_post_thumbnail() ) :
+
+        		the_post_thumbnail();
+        endif; ?>
         	<div class="entry-content">
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             

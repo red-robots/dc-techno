@@ -43,10 +43,11 @@ add_action('wp_head', 'mytheme_favicon');
 	Product Excerpt.
 ---------------------------------------*/
 function get_product_excerpt($count){
+  // whatever you want to append on the end of the last word
+  $words = '...';
   $excerpt = get_the_content();
   $excerpt = strip_tags($excerpt);
-  $excerpt = wp_trim_words($excerpt, 15, $count);
-  $excerpt = $excerpt.'...';
+  $excerpt = wp_trim_words($excerpt, $count, $words);
   return $excerpt;
 }
 function edit_admin_menus() {

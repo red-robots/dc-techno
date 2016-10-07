@@ -1,33 +1,29 @@
 <?php
 /**
- * The Template for displaying all single posts
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * Template Name: Contact
  */
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
+	<div id="primary" class="site-content-full">
 		<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
+				
 				<div class="entry-content">
                 <h1><?php the_title(); ?></h1>
 
-                <?php if ( has_post_thumbnail() ) :
-
-        		the_post_thumbnail();
-        endif; ?>
-                <?php the_content(); ?>
+                <div class="col-left"><?php the_content(); ?></div>
+                
+                	 <div class="col-right"><?php echo get_field('right_column') ?></div> 
+                            
                 </div><!-- entry content -->
-
+                
+                
 			<?php endwhile; // end of the loop. ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -55,6 +55,7 @@ $('.service-wrapper').click(function() {
 	
 	// Equal heights divs
 	$('.blocks').matchHeight();
+	$('.js-blocks').matchHeight();
 	/*var byRow = $('body').hasClass('test-rows');
 		$('.blocks-container').each(function() {
 		 $(this).children('.blocks').matchHeight({

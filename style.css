@@ -430,7 +430,7 @@ a:hover {
 	padding: 0 24px;
 	background-color: #fff;
 }
-.site-content {
+.site-content , .site-content-full {
 	margin: 24px 0 0;
 }
 .widget-area {
@@ -859,7 +859,7 @@ cursor: pointer;
 }
 /* = Products
 -------------------------------------------------------------- */
-.product {
+.product, .product-side {
 	width: 100%;
 	position: relative;
 	border-radius: 3px;
@@ -868,13 +868,16 @@ cursor: pointer;
 -moz-box-shadow: 0px 2px 5px 1px rgba(196,196,196,1);
 box-shadow: 0px 2px 5px 1px rgba(196,196,196,1);
 }
-.product a {
+.product-side {
+	margin: 0 0 30px 0;
+}
+.product a, .product-side a {
 	display: block;	
 }
 .prod-first, .prod-last {
 	margin: 0 0 30px 0;
 }
-.product img {
+.product img , .product-side img {
 	width: 100%;
 }
 .product-header {
@@ -1021,7 +1024,7 @@ article.sticky .featured-post {
 	margin: 0 0 24px;
 	line-height: 1.714285714;
 	font-size: 16px;
-	font-weight: 100;
+	font-weight: 300;
 }
 .entry-content a:visited,
 .comment-content a:visited {
@@ -1185,7 +1188,11 @@ footer.entry-meta {
 	font-weight: normal;
 }
 
-
+.service-questions {
+	width: 100%;
+	float: left;
+	padding-bottom: 150px;
+}
 /* =Archives
 -------------------------------------------------------------- */
 
@@ -1367,13 +1374,21 @@ a.comment-edit-link:hover {
 }
 
 
-
+.col-left, .col-right {
+	width: 100%;
+	float: left;
+	margin: 0 0 30px 0;
+}
 
 /* =Widgets
 -------------------------------------------------------------- */
 
 .widget-area .widget ul ul {
 	margin-left: 12px;
+}
+.widget-area h3 {
+	margin: 0 0 30px 0;
+	font-size: 18px;
 }
 .widget_rss li {
 	margin: 12px 0;
@@ -1779,7 +1794,16 @@ img#wpstats {
 	margin: 0 0 30px 0;
 }
 }
-
+.col-left {
+	width: 45%;
+	float: left;
+	margin: 0 0 30px 0;
+}
+.col-right {
+	width:45%;
+	float: right;
+	margin: 0 0 30px 0;
+}
 /* Minimum width of 960 pixels. */
 @media screen and (min-width: 1040px) {
 .wrapper {
