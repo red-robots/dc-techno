@@ -1,0 +1,31 @@
+/* Pagination
+-------------------------------------------------------------- */
+.pagi {
+	width: 100%;
+	margin: 0 0 50px 0;	
+}
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+	color: #fff;
+	text-decoration:none;
+}
+.navigation li {
+	display: inline;
+}
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+	background-color: #333;
+	border-radius: 3px;
+	cursor: pointer;
+	padding: 12px;
+	padding: 0.75rem;
+	transition: background-color 0.3s ease;
+}
+.navigation li a:hover,
+.navigation li.active a {
+	background-color: #F70000;
+}
