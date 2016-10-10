@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
+	<div id="primary" class="site-content-full">
 		<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); 
@@ -41,9 +41,13 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<div id="secondary" class="widget-area" role="complementary">
-	<h3>Other Products</h3>
-	<?php
+
+
+<div class="clear"></div>
+<div class="entry-content">
+<h3 class="other-products">Other Products</h3>
+</div>
+<?php
 $i = 0;
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
@@ -80,7 +84,7 @@ $i = 0;
 			
 		?>
                 
-        <div class="product-side ">
+        <div class="product <?php echo $prodClass; ?> ">
         <a href="<?php the_permalink(); ?>">
         	<div class="product-header blocks"><?php the_title(); ?></div>
          <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" />
@@ -92,7 +96,6 @@ $i = 0;
         
 	<?php endwhile; // end of the loop. ?>
     <?php endif; // end of the loop. ?>
-</div><!-- #secondary -->
 
 
 <?php get_footer(); ?>

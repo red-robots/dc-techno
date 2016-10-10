@@ -54,7 +54,7 @@
         
             <div class="disclaimer"><?php echo $disclaimer; ?></div>
             <div class="clear"></div>
-            <div class="linkedin"><a target="_blank"> href="<?php echo $linkedin; ?>">LinkedIn</a></div>
+            <div class="linkedin"><a target="_blank" href="<?php echo $linkedin; ?>">LinkedIn</a></div>
             <div class="phone"><?php echo $phone; ?></div>
             
             <div class="clear"></div>
