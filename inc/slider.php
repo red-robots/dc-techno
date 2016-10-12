@@ -81,8 +81,8 @@ if ( have_rows('services','option') ) : ?>
 <?php 
 // OPtions
 $slide = get_field('image','option');
-$intro = 'Turn-key solutions for all things';
-$mainTitle = 'Battery';
+// $intro = 'Turn-key solutions for all things';
+// $mainTitle = 'Battery';
 // set empty first
 $titles = array();
 

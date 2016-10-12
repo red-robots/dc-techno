@@ -13,6 +13,43 @@ jQuery(document).ready(function ($) {
         $(this).addClass("active");
         }
 	});
+	/*
+	*
+	*	Smooth Scroll to Anchor
+	*
+	------------------------------------*/
+	//  $('a').click(function(){
+	//     $('html, body').animate({
+	//         scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+	//     }, 500);
+	//     return false;
+	// });
+
+	
+
+	$(".myLink").bind("click", function() {
+	    $(".hidden-div").hide();
+		// deactivate the active class for the bubble
+		$(".myLink").removeClass('active');
+	    var divId= $(this).attr("divId");
+	    $("#" + divId).show();
+		// activate the active class for the bubble
+		$(this).addClass('active');
+	});
+
+	 /*
+	*
+	*	Highlight anchored div
+	*
+	------------------------------------*/
+	$('.team-contact').click(function() {
+		setTimeout(function(){
+			var hash = window.location.hash.substring(1);
+			console.log(hash);
+			$('.team-container').find('.active').removeClass('active');
+			$('.team-container').find("#" + hash).addClass('active');
+		},300);
+	});
 	
 	
 	// Flexslider

@@ -1,29 +1,70 @@
+<?php
+	$termArray = array();
+
+	$wp_query = new WP_Query();
+	$wp_query->query(array(
+	'post_type'=>'team',
+	'posts_per_page' => -1,
+	'paged' => $paged,
+	
+));
+if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); 
+
+$ID = get_the_ID();
+$terms = get_the_terms($ID, 'rep_area');
+
+$termArray[] = $terms[0]->slug;
+// echo $terms[0]->name;
+
+// echo '<pre>';
+// print_r($termArray);
+// echo '</pre>';
+
+endwhile; endif;
+
+// echo '<pre>';
+// print_r($termArray);
+// echo '</pre>';
+?>	
+
 <div id="statemap-container">
 
 <div id="statemap">
-	<div class="state-marker va">
-    <a class="myLink" href="javascript:void(0);" divId="va">VA</a> 
-    </div><!-- state marker -->
+	<?php if(in_array('virginia', $termArray)) { ?>
+		<div class="state-marker va">
+	    	<a class="myLink" href="javascript:void(0);" divId="va">VA</a> 
+	    </div><!-- state marker -->
+    <?php } ?>
     
-    <div class="state-marker dc">
-    <a class="myLink" href="javascript:void(0);" divId="dc">DC</a> 
-    </div><!-- state marker -->
+    <?php if(in_array('district-of-columbia', $termArray)) { ?>
+	    <div class="state-marker dc">
+	    	<a class="myLink" href="javascript:void(0);" divId="dc">DC</a> 
+	    </div><!-- state marker -->
+    <?php } ?>
     
-    <div class="state-marker nc">
-    <a class="myLink active" href="javascript:void(0);" divId="nc">NC</a> 
-    </div><!-- state marker -->
+    <?php if(in_array('north-carolina', $termArray)) { ?>
+	    <div class="state-marker nc">
+	    	<a class="myLink active" href="javascript:void(0);" divId="nc">NC</a> 
+	    </div><!-- state marker -->
+    <?php } ?>
     
-    <div class="state-marker sc">
-    <a class="myLink" href="javascript:void(0);" divId="sc">SC</a> 
-    </div><!-- state marker -->
+    <?php if(in_array('south-carolina', $termArray)) { ?>
+	    <div class="state-marker sc">
+	    	<a class="myLink" href="javascript:void(0);" divId="sc">SC</a> 
+	    </div><!-- state marker -->
+    <?php } ?>
+
+    <?php if(in_array('delaware', $termArray)) { ?>
+	    <div class="state-marker de">
+	    	<a class="myLink" href="javascript:void(0);" divId="de">DE</a> 
+	    </div><!-- state marker -->
+    <?php } ?>
     
-    <div class="state-marker de">
-    <a class="myLink" href="javascript:void(0);" divId="de">DE</a> 
-    </div><!-- state marker -->
-    
-    <div class="state-marker md">
-    <a class="myLink" href="javascript:void(0);" divId="md">MD</a> 
-    </div><!-- state marker -->
+    <?php if(in_array('maryland', $termArray)) { ?>
+	    <div class="state-marker md">
+	    	<a class="myLink" href="javascript:void(0);" divId="md">MD</a> 
+	    </div><!-- state marker -->
+    <?php } ?>
 </div><!-- state map -->
 
 
@@ -47,7 +88,7 @@ Click on the map to the left to see who services each area.
 <?php
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-	'post_type'=>'team_member',
+	'post_type'=>'team',
 	'posts_per_page' => -1,
 	'paged' => $paged,
 	'tax_query' => array(
@@ -80,7 +121,7 @@ if ($wp_query->have_posts()) :  ?>
 <?php
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-	'post_type'=>'team_member',
+	'post_type'=>'team',
 	'posts_per_page' => -1,
 	'paged' => $paged,
 	'tax_query' => array(
@@ -113,7 +154,7 @@ if ($wp_query->have_posts()) :  ?>
 <?php
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-	'post_type'=>'team_member',
+	'post_type'=>'team',
 	'posts_per_page' => -1,
 	'paged' => $paged,
 	'tax_query' => array(
@@ -146,7 +187,7 @@ if ($wp_query->have_posts()) : ?>
 <?php
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-	'post_type'=>'team_member',
+	'post_type'=>'team',
 	'posts_per_page' => -1,
 	'paged' => $paged,
 	'tax_query' => array(
@@ -179,7 +220,7 @@ if ($wp_query->have_posts()) : ?>
 <?php
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-	'post_type'=>'team_member',
+	'post_type'=>'team',
 	'posts_per_page' => -1,
 	'paged' => $paged,
 	'tax_query' => array(
@@ -212,7 +253,7 @@ if ($wp_query->have_posts()) : ?>
 <?php
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-	'post_type'=>'team_member',
+	'post_type'=>'team',
 	'posts_per_page' => -1,
 	'paged' => $paged,
 	'tax_query' => array(

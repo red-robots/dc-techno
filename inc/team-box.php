@@ -9,8 +9,14 @@
 			$title = get_the_title() ;
 			// Put the title in dashed form
 			$sanitized =  sanitize_title_with_dashes($title);
+
+
+            ?>
+            <div class="teamthumb">
+            <?php
+        echo wp_get_attachment_image( $image, $size );
         ?>
-        <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" class="teamleft" />
+        </div>
         <div class="team-box-right">
             <h3><?php the_title(); ?></h3>
             <?php

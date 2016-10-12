@@ -34,6 +34,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header wrapper" role="banner">
+    <div class="header-wrap">
     <?php 
 		// Header info
 		$disclaimer = get_field('disclaimer','option');
@@ -66,7 +67,7 @@
             </nav><!-- #site-navigation -->
         
         </div><!-- header right -->
-
+        </div>
 	</header><!-- #masthead -->
     
     <?php if(is_front_page()) { get_template_part('inc/slider'); } ?>

@@ -5,17 +5,20 @@
     ###################################-->    
             
 <div class="entry-content">
-<h3>Team Memebers</h3>
+<h3>All Team Memebers</h3>
 </div>
 
 <?php
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-	'post_type'=>'team_member',
+	'post_type'=>'team',
 	'posts_per_page' => -1,
 	'paged' => $paged,
 ));
 	if ($wp_query->have_posts()) : ?>
+	<div class="team-container">
+		
+	
     <?php while ($wp_query->have_posts()) : ?>
     <?php $wp_query->the_post(); ?>	
     
@@ -29,8 +32,8 @@
 			$vcard = get_field('v_card'); 
 ?>
     
-    <a class="anchor-person" id="<?php echo $sanitized; ?>"></a>
-    <div class="team-member">
+   <!--  <a class="anchor-person" id="<?php echo $sanitized; ?>"></a> -->
+    <div class="team-member" id="<?php echo $sanitized; ?>">
     	<div class="team-photo">
 		<?php 
         // Get field Name
@@ -38,15 +41,17 @@
         $url = $image['url'];
 		 $size = 'large';
         $thumb = $image['sizes'][ $size ];
+
+        echo wp_get_attachment_image( $image, $size );
         ?>
-        <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" />
-        <div class="backtotop"><a href="#top">back to top</a></div>
+        
+        
         </div><!-- team photo -->
         
        <div class="team-content">
        <div class="entry-content">
        
-        <h2><?php the_title(); ?></h2>
+        <h2 class="team-title"><?php the_title(); ?></h2>
         <div class="vcard"><a href="<?php echo $vcard; ?>">vcard</a></div>
         <?php the_field('bio'); ?>
         
@@ -84,9 +89,11 @@
         
         
        </div><!-- entry content -->
+       <div class="backtotop"><a href="#top">back to top</a></div>
        </div><!-- team content -->
-        
+        	
     </div><!-- team member -->
     
 <?php endwhile; ?>
+</div><!-- team container -->
 <?php endif; wp_reset_query(); ?>

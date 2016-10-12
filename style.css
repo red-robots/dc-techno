@@ -274,6 +274,7 @@ input[type="reset"]:active {
 .comment-content img,
 .widget img {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	width: 100%;
 }
 img[class*="align"],
 img[class*="wp-image-"],
@@ -427,8 +428,11 @@ a:hover {
 
 /* Page structure */
 .site {
-	padding: 0 24px;
+	/*padding: 0 24px;*/
 	background-color: #fff;
+}
+#primary {
+	padding: 0 10px ;
 }
 .site-content , .site-content-full {
 	margin: 24px 0 0;
@@ -604,6 +608,9 @@ a:hover {
 }
 /* = Navigation
 -------------------------------------------------------------- */
+.header-wrap {
+	padding: 0 20px;
+}
 .main-navigation {
 	margin-top: 24px;
 	text-align: center;
@@ -626,6 +633,14 @@ a:hover {
 .main-navigation ul.nav-menu.toggled-on,
 .menu-toggle {
 	display: inline-block;
+	
+}
+.menu-toggle {
+	background-color: #F70000;
+	border-radius: 0;
+	box-shadow: none;
+	color: #fff;
+	padding: 10px 25px;
 }
 
 /* Banner */
@@ -708,6 +723,9 @@ footer[role="contentinfo"] {
 	-webkit-box-shadow: 0px 3px 16px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 3px 16px -4px rgba(0,0,0,0.75);
 box-shadow: 0px 3px 16px -4px rgba(0,0,0,0.75);
+}
+.homebox img {
+	width: 100%;
 }
 .hb-first, .hb-last {
 	margin: 0 0 30px 0;
@@ -804,12 +822,12 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
 .homelogos {
 	width: 100%;	
 	padding: 20px 0 50px 0;
-	overflow: hidden;
+	overflow: hidden;text-align: center;
 }
 .homelogo {
 	width: 175px;
 	/*width: 115px;*/
-	float:left;	
+	display: inline-block;
 }
 .homelogo img {
 	width: 100%;	
@@ -817,7 +835,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
 .homelogo a {
 	display: block;
 }
-.hlfirst {margin: 0 30px 0 0;}
+.hlfirst {margin: 0 2px 0 0;}
 .hllast {margin: 0 0px 0 0;}
 /* = Services
 -------------------------------------------------------------- */
@@ -919,8 +937,33 @@ box-shadow: 0px 2px 5px 1px rgba(196,196,196,1);
 	padding: 0 0 20px 0;
 	border-bottom: 1px solid #ccc;	
 }
+.backtotop {
+	font-size: 12px;
+	margin: 10px 0 0 0;	
+	width: auto;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+.backtotop a {
+	width: auto;
+	display: inline-block;
+	background-color:rgba(247,0,0,.7);
+	/*border-radius: 3px;*/
+	padding: 3px;
+	color: #fff;
+	text-decoration:none;
+}
+.backtotop a:hover {
+	background-color:rgba(247,0,0,1);
+}
 /* = Team Members
 -------------------------------------------------------------- */
+.gform_wrapper .math_medium input {width: auto !important;}
+
+.areas {
+	padding :20px 0 0 0;
+}
 .contact-left, .contact-left, .contact-bloc {
 	width: 100%;
 	margin: 10px auto;
@@ -929,6 +972,7 @@ box-shadow: 0px 2px 5px 1px rgba(196,196,196,1);
 .entry-content .contact-bloc h3 {
 	margin: 0 0 5px 0;	
 }
+
 li.team {
 	text-align: right;
 	float:right;
@@ -942,25 +986,69 @@ li.team a {
 	/*display: block;*/
 	padding: 5px 0 5px 0;	
 }
-.team-member {
+.team-container {
 	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin: 0 0 50px 0;
+}
+.team-member {
+	width: 44%;
 	position: relative;
-	margin: 0 0 30px 0;
+	margin: 1%;
 	padding :0 0 20px 0;
 	border-bottom: 2px solid #efefef;
-		
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2%;
+	background-color: rgba(238,238,238,.7);
+	
 }
+.team-member.active {
+	animation: pulse 1s infinite;
+	animation-iteration-count:1;
+	animation-fill-mode: forwards;
+}
+.element {
+  
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.0);
+-moz-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.0);
+box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.0);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 14px -1px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 14px -1px rgba(0,0,0,1);
+box-shadow: 0px 0px 14px -1px rgba(0,0,0,1);
+  }
+}
+.team-member h2.team-title  {
+	border-top: 1px solid #D3D3D3;
+	border-bottom: 1px solid #D3D3D3;
+	margin: 5px 0 ;
+	width: 100%;
+	float: left;
+}
+
 .team-photo {
-	width: 150px;
+	width: 100%;
 	float:left;
-	margin: 0 20px 20px 0;
+	margin: 0 0px 20px 0;
 	position: relative;
 }
-.team-photo img {
+.teamthumb {
+	width: 70px;
+	float: left;
+}
+.team-photo img, .teamthumb img {
 	width: 100%;
 }
 .team-content {
-	width : 500px;
+	width : 100%;
 	float:left;	
 }
 .team-content h4 {
@@ -973,13 +1061,29 @@ li.team a {
 	font-size: 12px;
 	margin: -20px 0 20px 0;	
 }
+.entry-content .vcard a, .vcard a {
+	color: rgba(247,0,0,.7);
+}
+.entry-content .vcard a:hover, .vcard a:hover {
+	color: rgba(247,0,0,1);
+}
 #dc, #md, #va, #sc, /*#nc,*/ #de {display:none}
 #statemap-container {display:none}
-.team-member {
+
+.contact-container {
 	width: 100%;
-	margin: 0 0 20px 0;
-	position: relative;
-	overflow: hidden;	
+
+	/*display: flex;*/
+	/*justify-content: space-between;*/
+}
+.contact-flex {
+	width: 100%;
+}
+.contact-flex h2 {
+	color: #333;
+	width: 100%;
+	border-bottom: 1px solid #F70000;
+	padding-bottom: 5px;
 }
 /* =Main content and comment content
 -------------------------------------------------------------- */
@@ -1087,10 +1191,6 @@ article.sticky .featured-post {
 	line-height: 1.714285714;
 	font-size: 16px;
 	font-weight: 300;
-}
-.entry-content a:visited,
-.comment-content a:visited {
-	color: #9f9f9f;
 }
 .entry-content ol,
 .comment-content ol,
@@ -1434,7 +1534,9 @@ a.comment-edit-link:hover {
 .required {
 	color: red;
 }
-
+.form {
+	padding: 50px 0 50px 0;
+}
 
 .col-left, .col-right {
 	width: 100%;
@@ -1548,6 +1650,17 @@ img#wpstats {
 }
 /* Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
+	.homelogo {
+
+	float:left;	
+}
+/* Responsive images */
+.entry-content img,
+.comment-content img,
+.widget img {
+	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	width: auto;
+}
 	.author-avatar {
 		float: left;
 		margin-top: 8px;
@@ -1693,6 +1806,160 @@ img#wpstats {
 	.commentlist .children {
 		margin-left: 48px;
 	}
+	/* = Team Members
+-------------------------------------------------------------- */
+.team-photo {
+	width: 150px;
+	float:left;
+	margin: 0 0px 20px 0;
+	position: relative;
+}
+.team-content {
+	width : 500px;
+	float:left;	
+}
+
+#statemap-container {
+	display:block;
+	width: 350px;
+	position: relative;
+	margin: 0 0 50px 0;
+	overflow: hidden;
+}
+#statemap {
+	width: 340px;
+	height: 500px;
+	float:left;
+	position: relative;
+	background-image: url(images/map.png);
+	background-repeat: no-repeat;
+}
+#team-divs {
+	width:220px;
+	float: right;
+    margin: -80px 0 0 0;
+    z-index: 10000;
+    position: relative;
+}
+.team-box {
+	background-color: #fff;
+	border-bottom: 3px solid #F70000;
+	border-top: 3px solid #eee;
+	border-right: 3px solid #eee;
+	border-left: 3px solid #eee;
+	border-radius: 0px;
+	padding: 10px;
+	color:#000;
+	margin: 0 auto 15px auto;
+	width: 180px; 
+	height: 110px;
+	float:left;
+	line-height: 1.3;
+	font-size: 13px;
+	/* -webkit-box-shadow: 0px 0px 14px -1px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 14px -1px rgba(0,0,0,1);
+box-shadow: 0px 0px 14px -1px rgba(0,0,0,1);*/
+}
+.listareas {
+	font-size: 11px;	
+}
+.listareas a {
+	text-decoration: none;
+	color: #000;
+}
+.team-box-right {
+	width: 100px;
+	float:right;
+	overflow: hidden;	
+	position: relative;
+	height: 110px;
+}
+img.teamleft {
+	margin: 0 10px 0px 0;	
+	border-radius: 10px 0 0 0;
+}
+.team-contact {
+	width: auto;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;	
+}
+.team-contact a {
+	width: auto;
+	display: inline-block;	
+	background-color: rgba(247,0,0,1);
+	border: 1px solid #fff;
+	color: #fff;
+	text-align:center;
+	text-decoration: none;
+	padding: 5px 10px ;
+	border-radius: 0px;
+}
+.team-contact a:hover {
+	background-color: rgba(255,255,255,1);
+	border: 1px solid rgba(247,0,0,1);
+	color: rgba(247,0,0,1);
+}
+.team-box h3 {
+	/*width: auto;
+	display: inline-block;*/
+	margin: 0px 0 2px 0;	
+}
+.state-marker {
+	position: absolute;
+	
+}
+.state-marker a {
+	width: 40px;
+	height:30px;
+	background-image: url(images/bubbles.png);	
+	background-position: 0px 0px;
+	display: block;
+	padding: 10px 0px 10px 30px;
+	color: #fff;
+	text-decoration: none;	
+}
+.state-marker a:hover, .state-marker a.active  {
+	background-position: -0px -50px;	
+}
+.de {top: 40px; right: -5px;}
+.md {top: 40px; right:50px;}
+.dc {top: 88px; right: 28px;}
+.nc {top: 230px; right: 70px;}
+.sc {top: 310px; right: 140px;}
+.va {top: 150px; right: 80px;}
+.team-member {
+	width: 19%;
+	display: flex;
+	/*flex-direction: row;
+	flex-basis: 100%;*/
+	/*flex: 1;*/
+	flex-wrap: wrap;
+	padding: 20px;
+	background-color: rgba(238,238,238,.7);
+	border-bottom: 4px solid rgba(238,238,238,1);
+	margin: 1%;
+}
+.team-member > * {
+	width: 100%;
+	justify-content: space-between;
+}
+.team-member img {
+	width: 100%;
+}
+.team-member .team-content {
+	align-self: flex-end;
+}
+.contact-container {
+	/*width: 100%;*/
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 90px 0;
+}
+.contact-flex {
+	width: 25%;
+}
+
 /* Footer */
 .site-info {
 	text-align: left;
@@ -1841,31 +2108,36 @@ img#wpstats {
 	font-size: 14px;
 	font-weight: 300;	
 }
-/* = Products
--------------------------------------------------------------- */
-.product {
-	width: 32%;
-	position: relative;
-	border-radius: 3px;
-	float: left;
-}
-.prod-first {
-	margin: 0 2% 30px 0;
-}
-.prod-last {
-	margin: 0 0 30px 0;
-}
-}
-.col-left {
-	width: 45%;
-	float: left;
-	margin: 0 0 30px 0;
-}
-.col-right {
-	width:45%;
-	float: right;
-	margin: 0 0 30px 0;
-}
+	/* = Products
+	-------------------------------------------------------------- */
+	.product {
+		width: 32%;
+		position: relative;
+		border-radius: 3px;
+		float: left;
+	}
+	.prod-first {
+		margin: 0 2% 30px 0;
+	}
+	.prod-last {
+		margin: 0 0 30px 0;
+	}
+	.col-left {
+		width: 35%;
+		float: left;
+		margin: 0 0 30px 0;
+	}
+	.col-right {
+		width:55%;
+		float: right;
+		margin: 0 0 30px 0;
+	}
+	.form {
+		background-color: rgba(0,0,0,.1);
+		padding: 20px;
+	}
+} 
+
 /* Minimum width of 960 pixels. */
 @media screen and (min-width: 1040px) {
 .wrapper {
@@ -1897,5 +2169,12 @@ img#wpstats {
 .slide-desc {
 	font-size: 26px;
 	margin-top: 30px;
+}
+#statemap-container {
+	width: 750px;
+}
+#team-divs {
+	margin: 0;
+	float: left;
 }
 }
