@@ -919,6 +919,68 @@ box-shadow: 0px 2px 5px 1px rgba(196,196,196,1);
 	padding: 0 0 20px 0;
 	border-bottom: 1px solid #ccc;	
 }
+/* = Team Members
+-------------------------------------------------------------- */
+.contact-left, .contact-left, .contact-bloc {
+	width: 100%;
+	margin: 10px auto;
+	text-align:center;
+}
+.entry-content .contact-bloc h3 {
+	margin: 0 0 5px 0;	
+}
+li.team {
+	text-align: right;
+	float:right;
+	width: 100%;
+	margin: 0 0 5px 0;
+	
+}
+li.team a {
+	color: #fff;
+	text-decoration: none;
+	/*display: block;*/
+	padding: 5px 0 5px 0;	
+}
+.team-member {
+	width: 100%;
+	position: relative;
+	margin: 0 0 30px 0;
+	padding :0 0 20px 0;
+	border-bottom: 2px solid #efefef;
+		
+}
+.team-photo {
+	width: 150px;
+	float:left;
+	margin: 0 20px 20px 0;
+	position: relative;
+}
+.team-photo img {
+	width: 100%;
+}
+.team-content {
+	width : 500px;
+	float:left;	
+}
+.team-content h4 {
+	margin: 0 0 0px 0 !important;	
+}
+.listregionarea {
+	margin: 0 0 20px 0;
+}
+.vcard {
+	font-size: 12px;
+	margin: -20px 0 20px 0;	
+}
+#dc, #md, #va, #sc, /*#nc,*/ #de {display:none}
+#statemap-container {display:none}
+.team-member {
+	width: 100%;
+	margin: 0 0 20px 0;
+	position: relative;
+	overflow: hidden;	
+}
 /* =Main content and comment content
 -------------------------------------------------------------- */
 

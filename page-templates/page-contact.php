@@ -22,6 +22,10 @@ get_header(); ?>
                 
 			<?php endwhile; // end of the loop. ?>
 
+			<?php get_template_part('inc/map'); ?>
+
+			<?php get_template_part('inc/team-member-full'); ?> 
+
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
