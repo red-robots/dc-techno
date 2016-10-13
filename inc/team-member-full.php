@@ -5,7 +5,7 @@
     ###################################-->    
             
 <div class="entry-content">
-<h3>All Team Memebers</h3>
+<h3>All Team Members</h3>
 </div>
 
 <?php
