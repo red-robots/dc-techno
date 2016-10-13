@@ -29,7 +29,7 @@
 			// Put the title in dashed form
 			$sanitized =  sanitize_title_with_dashes($title);
 			// get the vcard 
-			$vcard = get_field('v_card'); 
+			$vcard = get_field('vcard'); 
 ?>
     
    <!--  <a class="anchor-person" id="<?php echo $sanitized; ?>"></a> -->
